@@ -67,9 +67,9 @@ namespace Tool
                 {
                     if(IsValid(items))
                     {
-                        var fromAddress = new MailAddress("kellytrong112@gmail.com", "");
+                        var fromAddress = new MailAddress("your email", "");
                         var toAddress = new MailAddress(items, "");
-                        const string fromPassword = "trong0924707771";
+                        const string fromPassword = "your password";
                         string subject = title;
                         string body = content.ToString(); // txtContent
 
