@@ -17,3 +17,14 @@ C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Gửi mail hàng loạt\T
 C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Gửi mail hàng loạt\Tool\Tool\obj\Debug\Tool.exe
 C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Gửi mail hàng loạt\Tool\Tool\obj\Debug\Tool.pdb
 C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Gửi mail hàng loạt\Tool\Tool\obj\Debug\Tool.frmMain.resources
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\bin\Debug\Tool.exe.config
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\bin\Debug\Tool.exe
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\bin\Debug\Tool.pdb
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\obj\Debug\Tool.csprojResolveAssemblyReference.cache
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\obj\Debug\Tool.frmMain.resources
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\obj\Debug\Tool.Properties.Resources.resources
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\obj\Debug\Tool.csproj.GenerateResource.Cache
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\obj\Debug\Tool.csproj.CoreCompileInputs.cache
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\obj\Debug\Tool.exe
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\obj\Debug\Tool.pdb
+C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Tool Send Email\Tool\Tool\bin\Debug\Newtonsoft.Json.dll

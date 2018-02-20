@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Net.Mail;
@@ -51,25 +45,51 @@ namespace Tool
         private List<string> readMailContent(string link)
         {
             List<string> lstResults = new List<string>();
-            foreach (string line in File.ReadAllLines(link))
+            try
             {
-                lstResults.Add(line);
+                foreach (string line in File.ReadAllLines(link))
+                {
+                    lstResults.Add(line);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Try again!!! No file exist");
             }
             return lstResults;
         }
 
-        private void sendMail(int milisecond, string content, string title)
+        private void WriteLogFile(string content)
         {
-            foreach (var item in readMailContent(openFileDialog1.FileName))
+            if (!File.Exists("log.txt"))
+            {
+                File.Create("log.txt");
+                TextWriter tw = new StreamWriter("log.txt");
+                tw.WriteLine(content);
+                tw.Close();
+            }
+            else
+            {
+                using (var tw = new StreamWriter("log.txt", true))
+                {
+                    tw.WriteLine(content);
+                    tw.Close();
+                }
+            }
+        }
+
+        private void sendMail(int milisecond, string content, string title, object sender, EventArgs e)
+        {
+            foreach (var item in readMailContent(openFileDialog1.FileName)) 
             {
                 string[] results = item.Split(',');
                 foreach(var items in results) // items = email
                 {
                     if(IsValid(items))
                     {
-                        var fromAddress = new MailAddress("your email", "");
+                        var fromAddress = new MailAddress(txtUsername.Text, "");
                         var toAddress = new MailAddress(items, "");
-                        const string fromPassword = "your password";
+                        string fromPassword = txtPassword.Text.ToString();
                         string subject = title;
                         string body = content.ToString(); // txtContent
 
@@ -118,16 +138,25 @@ namespace Tool
 
                             }
                             Thread.Sleep(milisecond);
-                            smtp.Send(message);
+                            try
+                            {
+                                smtp.Send(message);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Having a lot of errors while sending email. Can you check email and password?");
+                            }
+                            WriteLogFile(items.ToString() + "....." + "Success");
                         }
                     }
                     else // email not true
                     {
-
+                        // email not true => continue and write in log file
+                        WriteLogFile(items.ToString() + "....." + "Fail");
+                        continue;
                     }
                 }
             }
-            
         }
 
         public bool IsValid(string emailaddress)
@@ -153,7 +182,7 @@ namespace Tool
         private void btnSendSlow_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            sendMail(500, txtContent.Text, txtTitle.Text);
+            sendMail(500, txtContent.Text, txtTitle.Text, sender,e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -172,7 +201,7 @@ namespace Tool
         private void btnSendFast_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            sendMail(100, txtContent.Text, txtTitle.Text);
+            sendMail(100, txtContent.Text, txtTitle.Text, sender, e);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
